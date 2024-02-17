@@ -5,21 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import com.cs4520.assignment2.databinding.FragmentHomeBinding
+import com.cs4520.assignment2.databinding.FragmentMvvmBinding
 
-class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
-    private lateinit var mvpBtn: Button
-    private lateinit var mvvmBtn: Button
+class MVVMFragment : Fragment() {
+    private lateinit var binding : FragmentMvvmBinding
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentHomeBinding.inflate(inflater,container,false)
-        return binding.root
+        return inflater.inflate(R.layout.fragment_mvvm, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
