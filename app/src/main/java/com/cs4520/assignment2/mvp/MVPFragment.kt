@@ -5,12 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.cs4520.assignment2.MyCalculator
 import com.cs4520.assignment2.databinding.FragmentMvpBinding
 
 
-class MVPFragment : Fragment() {
+class MVPFragment : Fragment(), Contract.View {
     private lateinit var binding : FragmentMvpBinding
+
+    private var presenter: MVPPresenter? = null
 
 
     override fun onCreateView(
@@ -25,6 +26,16 @@ class MVPFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        presenter = MVPPresenter(this)
 
+
+    }
+
+    override fun initView() {
+        TODO("Not yet implemented")
+    }
+
+    override fun updateView() {
+        TODO("Not yet implemented")
     }
 }
