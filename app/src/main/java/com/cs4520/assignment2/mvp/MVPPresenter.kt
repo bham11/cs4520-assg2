@@ -11,22 +11,25 @@ class MVPPresenter(view: Contract.View): Contract.Presenter {
 
 
 
-    override fun getCalculation(function:String, x:Float, y:Float) {
+    override fun getCalculation(function:String, x:Double, y:Double): Double {
+        var result = 0.0
+
         when (function) {
             "add" -> {
-                model.add(x,y)
+                result = model.add(x,y)
             }
             "subtract" -> {
-                model.subtract(x,y)
+                result= model.subtract(x,y)
             }
             "multiply" -> {
-                model.multiply(x,y)
+                result= model.multiply(x,y)
             }
             "divide" -> {
-                model.divide(x,y)
+                result = model.divide(x,y)
             }
         }
         view.updateView()
+        return result
     }
 
 }

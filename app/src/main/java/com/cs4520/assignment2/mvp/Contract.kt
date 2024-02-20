@@ -8,14 +8,14 @@ interface Contract {
     }
 
     interface Presenter {
-        fun getCalculation(function:String, x:Float, y:Float)
+        fun getCalculation(function:String, x:Double, y:Double):Double
         
     }
     interface Model {
-        fun add(x:Float, y:Float): Float
-        fun subtract(x:Float, y:Float): Float
-        fun multiply(x:Float, y:Float): Float
-        fun divide(x:Float, y:Float): Float
+        fun add(x:Double, y:Double): Double
+        fun subtract(x:Double, y:Double): Double
+        fun multiply(x:Double, y:Double): Double
+        fun divide(x:Double, y:Double): Double
         
     }
 }
