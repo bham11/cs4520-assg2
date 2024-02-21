@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.cs4520.assignment2.databinding.FragmentMvpBinding
 
 
@@ -29,13 +30,74 @@ class MVPFragment : Fragment(), Contract.View {
         presenter = MVPPresenter(this)
 
 
+
+
     }
 
     override fun initView() {
-        TODO("Not yet implemented")
+
+        binding.addBtn.setOnClickListener {
+            if(binding.firstNum.text.toString().toDoubleOrNull() != null
+                && binding.secondNum.text.toString().toDoubleOrNull() != null) {
+                presenter?.getCalculation(
+                    "add",
+                    binding.firstNum.text.toString().toDouble(),
+                    binding.secondNum.text.toString().toDouble()
+                )
+            }
+            else {
+                Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.subBtn.setOnClickListener {
+            if(binding.firstNum.text.toString().toDoubleOrNull() != null
+                && binding.secondNum.text.toString().toDoubleOrNull() != null) {
+                presenter?.getCalculation(
+                    "subtract",
+                    binding.firstNum.text.toString().toDouble(),
+                    binding.secondNum.text.toString().toDouble()
+                )
+            }
+            else {
+                Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
+            }
+        }
+        binding.multBtn.setOnClickListener {
+            if(binding.firstNum.text.toString().toDoubleOrNull() != null
+                && binding.secondNum.text.toString().toDoubleOrNull() != null) {
+                presenter?.getCalculation(
+                    "multiply",
+                    binding.firstNum.text.toString().toDouble(),
+                    binding.secondNum.text.toString().toDouble()
+                )
+            }
+            else {
+                Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
+            }
+        }
+        binding.divBtn.setOnClickListener {
+            if(binding.firstNum.text.toString().toDoubleOrNull() != null
+                && binding.secondNum.text.toString().toDoubleOrNull() != null
+                && binding.secondNum.text.toString().toDouble() != 0.0) {
+                presenter?.getCalculation(
+                    "divide",
+                    binding.firstNum.text.toString().toDouble(),
+                    binding.secondNum.text.toString().toDouble()
+                )
+            }
+            else {
+                Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun updateView() {
-        TODO("Not yet implemented")
+        binding.resultText.visibility = View.VISIBLE
+        val calc = presenter?.getResult()
+        val text = "Result: $calc"
+        binding.resultText.text = text
+
+
     }
 }

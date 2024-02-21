@@ -3,6 +3,9 @@ package com.cs4520.assignment2
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
+import androidx.navigation.fragment.NavHostFragment
+import com.cs4520.assignment2.mvp.MVPFragment
+import com.cs4520.assignment2.mvvm.MVVMFragment
 
 class MainActivity: AppCompatActivity() {
 
@@ -10,8 +13,11 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_main_activity)
         if (savedInstanceState == null) {
+            val appHost = NavHostFragment.create(R.navigation.nav_graph)
+
             supportFragmentManager.commit {
                 supportFragmentManager.beginTransaction()
-                    .add(R.id.fragmentContainerView, HomeFragment())
-                    .commitAllowingStateLoss()
+                    .replace(R.id.fragmentContainerView, appHost)
+                    .setPrimaryNavigationFragment(appHost)
+                    .commit()
 }}}}

@@ -8,7 +8,8 @@ interface Contract {
     }
 
     interface Presenter {
-        fun getCalculation(function:String, x:Double, y:Double):Double
+        fun getCalculation(function:String, x:Double, y:Double)
+        fun getResult(): Double
         
     }
     interface Model {

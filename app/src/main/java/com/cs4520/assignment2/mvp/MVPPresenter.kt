@@ -4,6 +4,7 @@ class MVPPresenter(view: Contract.View): Contract.Presenter {
 
     private var view: Contract.View = view
     private var model: Contract.Model = MVPModel()
+    private var lastResult: Double = 0.0
 
     init {
         view.initView()
@@ -11,25 +12,27 @@ class MVPPresenter(view: Contract.View): Contract.Presenter {
 
 
 
-    override fun getCalculation(function:String, x:Double, y:Double): Double {
-        var result = 0.0
+    override fun getCalculation(function:String, x:Double, y:Double) {
 
         when (function) {
             "add" -> {
-                result = model.add(x,y)
+                lastResult = model.add(x,y)
             }
             "subtract" -> {
-                result= model.subtract(x,y)
+                lastResult= model.subtract(x,y)
             }
             "multiply" -> {
-                result= model.multiply(x,y)
+                lastResult= model.multiply(x,y)
             }
             "divide" -> {
-                result = model.divide(x,y)
+                lastResult = model.divide(x,y)
             }
         }
         view.updateView()
-        return result
+    }
+
+    override fun getResult(): Double {
+        return lastResult
     }
 
 }
