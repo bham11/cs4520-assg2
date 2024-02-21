@@ -5,13 +5,42 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class CalcViewModel: ViewModel() {
-    private var calcLiveData = MutableLiveData<Double>()
+     var calcLiveData = MutableLiveData<Double>()
 
-    fun getCalLiveData(): LiveData<Double> {
-        return calcLiveData
+    // look into observersb
+
+    fun calculate(opp:String, x:Double, y:Double): Double {
+        var result = 0.0
+        when (opp) {
+            "add" -> {
+                result = this.add(x,y)
+            }
+            "subtract" -> {
+                result= this.subtract(x,y)
+            }
+            "multiply" -> {
+                result= this.multiply(x,y)
+            }
+            "divide" -> {
+                result = this.divide(x,y)
+            }
+        }
+        return result
     }
 
-    fun setCalcLiveData(result: Double) {
-        calcLiveData.value = result
+    private fun add(x:Double, y:Double): Double {
+        return x + y
+    }
+
+    private fun subtract(x:Double, y:Double): Double {
+        return x - y
+    }
+
+    private fun multiply(x:Double, y:Double): Double {
+        return x * y
+    }
+
+    private fun divide(x:Double, y:Double): Double {
+        return x / y
     }
 }
