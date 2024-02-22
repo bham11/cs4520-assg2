@@ -50,7 +50,7 @@ class MVVMFragment : Fragment() {
         binding.addBtn.setOnClickListener {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null) {
-                val result = viewModel.calculate("add",
+                val result = viewModel.add(
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble())
                 viewModel.calcLiveData.setValue(result)
@@ -64,7 +64,7 @@ class MVVMFragment : Fragment() {
         binding.subBtn.setOnClickListener {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null) {
-                val result = viewModel.calculate("subtract",
+                val result = viewModel.subtract(
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble())
                 viewModel.calcLiveData.setValue(result)
@@ -77,7 +77,7 @@ class MVVMFragment : Fragment() {
         binding.multBtn.setOnClickListener {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null) {
-                val result = viewModel.calculate("multiply",
+                val result = viewModel.multiply(
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble())
                 viewModel.calcLiveData.setValue(result)
@@ -91,7 +91,7 @@ class MVVMFragment : Fragment() {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDouble() != 0.0) {
-                val result = viewModel.calculate("divide",
+                val result = viewModel.divide(
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble())
                 viewModel.calcLiveData.setValue(result)

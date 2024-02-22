@@ -44,8 +44,10 @@ class MVPFragment : Fragment(), Contract.View {
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble()
                 )
+                this.clearCalc()
             }
             else {
+                this.clearCalc()
                 Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
             }
         }
@@ -58,8 +60,10 @@ class MVPFragment : Fragment(), Contract.View {
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble()
                 )
+                this.clearCalc()
             }
             else {
+                this.clearCalc()
                 Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
             }
         }
@@ -71,8 +75,10 @@ class MVPFragment : Fragment(), Contract.View {
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble()
                 )
+                this.clearCalc()
             }
             else {
+                this.clearCalc()
                 Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
             }
         }
@@ -85,8 +91,10 @@ class MVPFragment : Fragment(), Contract.View {
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble()
                 )
+                this.clearCalc()
             }
             else {
+                this.clearCalc()
                 Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
             }
         }
@@ -99,5 +107,9 @@ class MVPFragment : Fragment(), Contract.View {
         binding.resultText.text = text
 
 
+    }
+    private fun clearCalc() {
+        binding.firstNum.text.clear()
+        binding.secondNum.text.clear()
     }
 }
