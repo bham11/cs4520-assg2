@@ -13,6 +13,9 @@ interface Contract {
         
     }
     interface Model {
+
+        fun setLastResult(x: Double)
+        fun getLastResult(): Double
         fun add(x:Double, y:Double): Double
         fun subtract(x:Double, y:Double): Double
         fun multiply(x:Double, y:Double): Double

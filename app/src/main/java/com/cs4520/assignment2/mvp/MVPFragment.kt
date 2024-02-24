@@ -29,9 +29,6 @@ class MVPFragment : Fragment(), Contract.View {
 
         presenter = MVPPresenter(this)
 
-
-
-
     }
 
     override fun initView() {
@@ -48,6 +45,7 @@ class MVPFragment : Fragment(), Contract.View {
             }
             else {
                 this.clearCalc()
+                this.clearResult()
                 Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
             }
         }
@@ -64,6 +62,7 @@ class MVPFragment : Fragment(), Contract.View {
             }
             else {
                 this.clearCalc()
+                this.clearResult()
                 Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
             }
         }
@@ -79,6 +78,7 @@ class MVPFragment : Fragment(), Contract.View {
             }
             else {
                 this.clearCalc()
+                this.clearResult()
                 Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
             }
         }
@@ -94,6 +94,7 @@ class MVPFragment : Fragment(), Contract.View {
                 this.clearCalc()
             }
             else {
+                this.clearResult()
                 this.clearCalc()
                 Toast.makeText(context, "Calculation Unsuccessful", Toast.LENGTH_SHORT).show()
             }
@@ -111,5 +112,9 @@ class MVPFragment : Fragment(), Contract.View {
     private fun clearCalc() {
         binding.firstNum.text.clear()
         binding.secondNum.text.clear()
+    }
+
+    private fun clearResult() {
+        binding.resultText.visibility = View.INVISIBLE
     }
 }
