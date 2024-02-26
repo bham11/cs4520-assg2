@@ -15,3 +15,5 @@ The Contract interface provides rules for how the pieces interact
 
 <b>.mvvm.MVVM: </b> directory that contains the Model ViewModel and View (MVVMFragment) for the MVVM architecture. 
 ViewModel uses LiveData to ensure that data remains even after orientation change.
+
+Github Link: https://github.com/bham11/cs4520-assg2
