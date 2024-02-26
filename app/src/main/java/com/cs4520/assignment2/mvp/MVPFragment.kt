@@ -36,7 +36,7 @@ class MVPFragment : Fragment(), Contract.View {
         binding.addBtn.setOnClickListener {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null) {
-                presenter?.getCalculation(
+                presenter?.sendCalculation(
                     "add",
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble()
@@ -53,7 +53,7 @@ class MVPFragment : Fragment(), Contract.View {
         binding.subBtn.setOnClickListener {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null) {
-                presenter?.getCalculation(
+                presenter?.sendCalculation(
                     "subtract",
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble()
@@ -69,7 +69,7 @@ class MVPFragment : Fragment(), Contract.View {
         binding.multBtn.setOnClickListener {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null) {
-                presenter?.getCalculation(
+                presenter?.sendCalculation(
                     "multiply",
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble()
@@ -86,7 +86,7 @@ class MVPFragment : Fragment(), Contract.View {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDouble() != 0.0) {
-                presenter?.getCalculation(
+                presenter?.sendCalculation(
                     "divide",
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble()

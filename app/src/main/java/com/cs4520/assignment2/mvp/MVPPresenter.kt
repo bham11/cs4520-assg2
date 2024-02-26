@@ -12,7 +12,7 @@ class MVPPresenter(view: Contract.View): Contract.Presenter {
 
 
 
-    override fun getCalculation(function:String, x:Double, y:Double) {
+    override fun sendCalculation(function:String, x:Double, y:Double) {
 
         when (function) {
             "add" -> {

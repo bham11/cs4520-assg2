@@ -4,8 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import androidx.navigation.fragment.NavHostFragment
-import com.cs4520.assignment2.mvp.MVPFragment
-import com.cs4520.assignment2.mvvm.MVVMFragment
 
 class MainActivity: AppCompatActivity() {
 
