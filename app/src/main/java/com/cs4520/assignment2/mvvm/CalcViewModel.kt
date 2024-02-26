@@ -6,19 +6,25 @@ import androidx.lifecycle.ViewModel
 class CalcViewModel : ViewModel() {
     var calcLiveData = MutableLiveData<Double>()
 
-    fun add(x: Double, y: Double): Double {
-        return x + y
-    }
+    private val calc = CalcModel()
 
-    fun subtract(x: Double, y: Double): Double {
-        return x - y
-    }
+    fun setCalculation(function:String, x:Double, y:Double) {
+       var result = 0.0
 
-    fun multiply(x: Double, y: Double): Double {
-        return x * y
-    }
-
-    fun divide(x: Double, y: Double): Double {
-        return x / y
+        when (function) {
+            "add" -> {
+                result = calc.add(x,y)
+            }
+            "subtract" -> {
+                result = calc.subtract(x,y)
+            }
+            "multiply" -> {
+                result = calc.multiply(x,y)
+            }
+            "divide" -> {
+                result = calc.divide(x,y)
+            }
+        }
+        calcLiveData.value = result
     }
 }

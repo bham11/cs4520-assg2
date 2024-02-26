@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.cs4520.assignment2.R
-import com.cs4520.assignment2.databinding.FragmentMvpBinding
 import com.cs4520.assignment2.databinding.FragmentMvvmBinding
 
 
@@ -50,10 +48,9 @@ class MVVMFragment : Fragment() {
         binding.addBtn.setOnClickListener {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null) {
-                val result = viewModel.add(
+                viewModel.setCalculation( "add",
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble())
-                viewModel.calcLiveData.setValue(result)
             }
             else {
                 this.giveErrorMsg()
@@ -64,10 +61,9 @@ class MVVMFragment : Fragment() {
         binding.subBtn.setOnClickListener {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null) {
-                val result = viewModel.subtract(
+                viewModel.setCalculation( "subtract",
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble())
-                viewModel.calcLiveData.setValue(result)
             }
             else {
                 this.giveErrorMsg()
@@ -77,10 +73,9 @@ class MVVMFragment : Fragment() {
         binding.multBtn.setOnClickListener {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null) {
-                val result = viewModel.multiply(
+                viewModel.setCalculation( "multiply",
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble())
-                viewModel.calcLiveData.setValue(result)
             }
             else {
                 this.giveErrorMsg()
@@ -91,10 +86,9 @@ class MVVMFragment : Fragment() {
             if(binding.firstNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDoubleOrNull() != null
                 && binding.secondNum.text.toString().toDouble() != 0.0) {
-                val result = viewModel.divide(
+                viewModel.setCalculation( "divide",
                     binding.firstNum.text.toString().toDouble(),
                     binding.secondNum.text.toString().toDouble())
-                viewModel.calcLiveData.setValue(result)
             }
             else {
                 this.giveErrorMsg()
